@@ -8,12 +8,12 @@ package project.konversi.mata.uang;
  *
  * @author Panji
  */
-public class HasilKonversi extends javax.swing.JFrame {
+public class TabelKurs extends javax.swing.JFrame {
 
     /**
      * Creates new form HasilKonversi
      */
-    public HasilKonversi() {
+    public TabelKurs() {
         initComponents();
     }
 
@@ -72,20 +72,21 @@ public class HasilKonversi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HasilKonversi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TabelKurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HasilKonversi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TabelKurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HasilKonversi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TabelKurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HasilKonversi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TabelKurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HasilKonversi().setVisible(true);
+                new TabelKurs().setVisible(true);
             }
         });
     }

@@ -15,6 +15,10 @@ public class ProjectKonversiMataUang {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Login a = new Login();
+        a.setLocationRelativeTo(null);
+        a.setVisible(true);
+        
     }
     
 }
