@@ -45,26 +45,26 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="tfInput" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jcAsal" alignment="1" max="32767" attributes="0"/>
-                              <Component id="lblPilih" alignment="1" pref="112" max="32767" attributes="0"/>
+                              <Component id="lblPilih" max="32767" attributes="0"/>
+                              <Component id="jcAsal" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="45" max="32767" attributes="0"/>
-                          <Component id="jcHasil" min="-2" pref="119" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="jcHasil" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnCekkurs" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnHitung" min="-2" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnCekkurs" max="32767" attributes="0"/>
+                      <Component id="btnHitung" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,9 +80,9 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="tfInput" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="btnHitung" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnCekkurs" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="39" max="32767" attributes="0"/>
               </Group>
@@ -93,11 +93,18 @@
         <Component class="javax.swing.JComboBox" name="jcAsal">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="11">
+                <StringItem index="0" value="-"/>
+                <StringItem index="1" value="Dollar Amerika"/>
+                <StringItem index="2" value="Dollar Hong Kong"/>
+                <StringItem index="3" value="Dollar Singapura"/>
+                <StringItem index="4" value="Euro"/>
+                <StringItem index="5" value="Pound Britania"/>
+                <StringItem index="6" value="Ringgit Malaysia"/>
+                <StringItem index="7" value="Rupiah Indonesia"/>
+                <StringItem index="8" value="Won Korea Selatan"/>
+                <StringItem index="9" value="Yen Jepang"/>
+                <StringItem index="10" value="Yuan Tiongkok"/>
               </StringArray>
             </Property>
           </Properties>
@@ -116,11 +123,18 @@
         <Component class="javax.swing.JComboBox" name="jcHasil">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="11">
+                <StringItem index="0" value="-"/>
+                <StringItem index="1" value="Dollar Amerika"/>
+                <StringItem index="2" value="Dollar Hong Kong"/>
+                <StringItem index="3" value="Dollar Singapura"/>
+                <StringItem index="4" value="Euro"/>
+                <StringItem index="5" value="Pound Britania"/>
+                <StringItem index="6" value="Ringgit Malaysia"/>
+                <StringItem index="7" value="Rupiah Indonesia"/>
+                <StringItem index="8" value="Won Korea Selatan"/>
+                <StringItem index="9" value="Yen Jepang"/>
+                <StringItem index="10" value="Yuan Tiongkok"/>
               </StringArray>
             </Property>
           </Properties>
@@ -140,7 +154,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnCekkurs">
           <Properties>
-            <Property name="text" type="java.lang.String" value="cek kurs"/>
+            <Property name="text" type="java.lang.String" value="Cek Kurs"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCekkursActionPerformed"/>
