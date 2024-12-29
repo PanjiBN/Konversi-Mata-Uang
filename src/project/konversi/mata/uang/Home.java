@@ -57,7 +57,7 @@ public class Home extends javax.swing.JFrame {
 
         btnHitung.setText("Hitung");
 
-        btnCekkurs.setText("btn");
+        btnCekkurs.setText("cek kurs");
         btnCekkurs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCekkursActionPerformed(evt);
