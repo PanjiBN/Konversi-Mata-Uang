@@ -13,7 +13,7 @@ import static project.konversi.mata.uang.Tm.nem;
  */
 public class TabelKurs extends javax.swing.JFrame {
     Tm e = new Tm();
-    //Class c = Class.forName("Tm");
+    //Class c = Class.forName("Tm");h
         
         //public static void label(){
         //JLabel label = new JLabel(); }
