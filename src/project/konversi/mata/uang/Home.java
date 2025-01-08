@@ -15,7 +15,7 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
-    DecimalFormat cf = new DecimalFormat("0.####");
+    DecimalFormat cf = new DecimalFormat(",000.####");
     public Home() {
         initComponents();
     }
