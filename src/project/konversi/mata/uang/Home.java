@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package project.konversi.mata.uang;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -10,9 +11,11 @@ package project.konversi.mata.uang;
  */
 public class Home extends javax.swing.JFrame {
     Tm e = new Tm();
+    TabelKurs t = new TabelKurs();
     /**
      * Creates new form Home
      */
+    DecimalFormat cf = new DecimalFormat("0.####");
     public Home() {
         initComponents();
     }
@@ -34,8 +37,8 @@ public class Home extends javax.swing.JFrame {
         btnCekkurs = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        JtA = new javax.swing.JTextField();
+        JtB = new javax.swing.JTextField();
         TaTtl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,14 +48,19 @@ public class Home extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setToolTipText("");
 
-        jcAs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rupiah Indonesia", "Dollar Amerika", "Dollar Hong Kong", "Dollar Singapura", "Euro", "Pound Britania", "Ringgit Malaysia", "Rupiah Indonesia", "Won Korea Selatan", "Yen Jepang", "Yuan Tiongkok" }));
+        jcAs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Rupiah Indonesia", "Dollar Amerika", "Dollar Hong Kong", "Dollar Singapura", "Euro", "Pound Britania", "Ringgit Malaysia", "Won Korea Selatan", "Yen Jepang", "Yuan Tiongkok" }));
         jcAs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcAsActionPerformed(evt);
             }
         });
 
-        jcHa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rupiah Indonesia", "Dollar Amerika", "Dollar Hong Kong", "Dollar Singapura", "Euro", "Pound Britania", "Ringgit Malaysia", "Rupiah Indonesia", "Won Korea Selatan", "Yen Jepang", "Yuan Tiongkok" }));
+        jcHa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Rupiah Indonesia", "Dollar Amerika", "Dollar Hong Kong", "Dollar Singapura", "Euro", "Pound Britania", "Ringgit Malaysia", "Won Korea Selatan", "Yen Jepang", "Yuan Tiongkok" }));
+        jcHa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcHaActionPerformed(evt);
+            }
+        });
 
         tfInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,17 +88,17 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-exchange-30 (1).png"))); // NOI18N
         jLabel3.setText("jLabel3");
 
-        jTextField1.setText("1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        JtA.setText("0");
+        JtA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                JtAActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("16207.32");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        JtB.setText("0");
+        JtB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                JtBActionPerformed(evt);
             }
         });
 
@@ -105,61 +113,56 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCekkurs))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jcAs, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                                .addComponent(jcHa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(17, 17, 17))
+                        .addComponent(tfInput, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 62, Short.MAX_VALUE))
+                    .addComponent(TaTtl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCekkurs))
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(tfInput, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 61, Short.MAX_VALUE))
-                            .addComponent(TaTtl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addComponent(JtB, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jcHa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcAs, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(JtA, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jcAs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcHa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(109, 109, 109))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnHitung))
-                        .addGap(28, 28, 28)))
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(JtB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JtA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcHa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jcAs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHitung))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCekkurs)
                     .addComponent(TaTtl))
-                .addGap(37, 37, 37))
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -178,18 +181,17 @@ public class Home extends javax.swing.JFrame {
 
     private void jcAsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcAsActionPerformed
         // TODO add your handling code here:
-        
-        
-/*Dollar Amerika
-Dollar Hong Kong
-Dollar Singapura
-Euro
-Pound Britania
-Ringgit Malaysia
-Rupiah Indonesia
-Won Korea Selatan
-Yen Jepang
-Yuan Tiongkok*/
+        if(jcAs.getSelectedItem().equals("Rupiah Indonesia")){JtA.setText(e.nem[0]);}
+        if(jcAs.getSelectedItem().equals("Dollar Amerika")){JtA.setText(e.nem[1]);}
+        if(jcAs.getSelectedItem().equals("Dollar Hong Kong")){JtA.setText(e.nem[2]);}
+        if(jcAs.getSelectedItem().equals("Dollar Singapura")){JtA.setText(e.nem[3]);}
+        if(jcAs.getSelectedItem().equals("Euro")){JtA.setText(e.nem[4]);}
+        if(jcAs.getSelectedItem().equals("Pound Britania")){JtA.setText(e.nem[5]);}
+        if(jcAs.getSelectedItem().equals("Ringgit Malaysia")){JtA.setText(e.nem[6]);}
+        if(jcAs.getSelectedItem().equals("Won Korea Selatan")){JtA.setText(e.nem[7]);}
+        if(jcAs.getSelectedItem().equals("Yen Jepang")){JtA.setText(e.nem[8]);}
+        if(jcAs.getSelectedItem().equals("Yuan Tiongkok")){JtA.setText(e.nem[9]);}
+         
     }//GEN-LAST:event_jcAsActionPerformed
 
     private void btnCekkursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCekkursActionPerformed
@@ -200,13 +202,13 @@ Yuan Tiongkok*/
         this.setVisible(false);
     }//GEN-LAST:event_btnCekkursActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void JtAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_JtAActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void JtBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_JtBActionPerformed
 
     private void tfInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfInputActionPerformed
         // TODO add your handling code here:
@@ -239,8 +241,22 @@ Yuan Tiongkok*/
         else if(jcHa.getSelectedItem().equals("Yen Jepang")){b=e.dat[8];}
         else if(jcHa.getSelectedItem().equals("Yuan Tiongkok")){b=e.dat[9];}
         ans = msk/a*b;
-        TaTtl.setText(String.valueOf(ans));
+        TaTtl.setText(String.valueOf(cf.format(ans)));
     }//GEN-LAST:event_btnHitungActionPerformed
+
+    private void jcHaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcHaActionPerformed
+        // TODO add your handling code here:
+        if(jcHa.getSelectedItem().equals("Rupiah Indonesia")){JtB.setText(e.nem[0]);}
+        if(jcHa.getSelectedItem().equals("Dollar Amerika")){JtB.setText(e.nem[1]);}
+        if(jcHa.getSelectedItem().equals("Dollar Hong Kong")){JtB.setText(e.nem[2]);}
+        if(jcHa.getSelectedItem().equals("Dollar Singapura")){JtB.setText(e.nem[3]);}
+        if(jcHa.getSelectedItem().equals("Euro")){JtB.setText(e.nem[4]);}
+        if(jcHa.getSelectedItem().equals("Pound Britania")){JtB.setText(e.nem[5]);}
+        if(jcHa.getSelectedItem().equals("Ringgit Malaysia")){JtB.setText(e.nem[6]);}
+        if(jcHa.getSelectedItem().equals("Won Korea Selatan")){JtB.setText(e.nem[7]);}
+        if(jcHa.getSelectedItem().equals("Yen Jepang")){JtB.setText(e.nem[8]);}
+        if(jcHa.getSelectedItem().equals("Yuan Tiongkok")){JtB.setText(e.nem[9]);}
+    }//GEN-LAST:event_jcHaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,14 +295,14 @@ Yuan Tiongkok*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JtA;
+    private javax.swing.JTextField JtB;
     private javax.swing.JLabel TaTtl;
     private javax.swing.JButton btnCekkurs;
     private javax.swing.JButton btnHitung;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JComboBox<String> jcAs;
     private javax.swing.JComboBox<String> jcHa;
     private javax.swing.JTextField tfInput;
