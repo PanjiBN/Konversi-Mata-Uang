@@ -14,8 +14,16 @@ public class Tm {
     //public static void nem[0]="hello";
     
     
-   public void Dtmain(){
+   public void main(){
     Double[] dat= new Double[10];
+    while(1==1)
+    {Double clock=0.0;
+    clock++;
+    dat[0] = clock;}}
+    
+   /* for(int x=0;x<10;x++){
+        dat[0]+=1;}
+    }
     //dat [0] = 1.7;
     //nem[0]=Double.toString(dat[0]);
     
@@ -34,7 +42,6 @@ public class Tm {
         Login a = new Login();
         a.setLocationRelativeTo(null);
         a.setVisible(true);
-        
     }
    
        

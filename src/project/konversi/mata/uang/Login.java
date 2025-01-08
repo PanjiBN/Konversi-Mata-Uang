@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         btnLogin.setText("Get Start");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -41,6 +41,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        lblWelc.setForeground(new java.awt.Color(255, 255, 255));
         lblWelc.setText("Selamat Datang");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
